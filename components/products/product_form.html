@@ -1,0 +1,35 @@
+<hr>
+<div ng-controller="productFormController" class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+        <form action="" >
+            <div class="form-group" style="text-align: center;">
+                <!-- <label for="image">Image:</label><br> -->
+                <!-- <input type="file" class="form-control" onchange="onChangeFile(event)"
+                      id="image" name="image"> -->
+                <input type="hidden" id="image-url" value="{{product.image}}" />
+                <img src="{{product.image}}" id="image-view" width="300" height="300" style="object-fit: cover;"/>
+            </div>
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" ng-model="product.name" class="form-control" id="name" name="name">
+                <input type="hidden" ng-model="product.id" id="id" name="id">
+            </div>
+            <div class="form-group">
+                <label for="price">Price:</label>
+                <input type="text" ng-model="product.price" class="form-control" id="price" name="price">
+            </div>
+            <div class="form-group">
+                <label for="quantity">Quantity:</label>
+                <input type="number" ng-model="product.quantity" class="form-control" id="quantity" name="quantity">
+            </div>
+            <div class="form-group">
+                <label for="description">Description:</label>
+                <textarea class="form-control" ng-model="product.description" name="description" id="description"></textarea>
+            </div>
+            <button type="button" class="btn btn-primary btn-outline btn-lg" ng-click="addToCart(product)">Add to cart</button> <!--ng-click="submitForm()-->
+        </form>
+    </div>
+    <div class="col-md-2"></div>
+</div>
+<br>
